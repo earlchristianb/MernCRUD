@@ -1,0 +1,30 @@
+.container{
+   display: flexbox;
+   justify-content: space-evenly;    
+    margin-right: 25%;
+   margin-left: 25% ;
+   margin-top: 5%;
+}
+.form{
+  column-count: 2;
+  column-width: auto;
+  display:flexbox;
+  column-gap: 30px;
+ 
+}
+.text_grid{
+    display: flexbox;
+    border: 2px solid white;
+    margin-left: auto;
+    margin-right:auto;
+}
+.text_container{
+    justify-content: space-between;
+     margin-left: auto;
+   margin-right: auto;
+    display: -ms-inline-flexbox;
+}
+.text_grid label{
+  margin-left: 10px;
+  margin-right:10px;
+}

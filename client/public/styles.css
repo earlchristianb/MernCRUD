@@ -1,0 +1,9 @@
+.body{
+    background-image: url(../src/components/images/Genshin-Impact.png);
+
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100%;
+  margin: 0; 
+  height: 100%; 
+}

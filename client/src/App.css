@@ -1,5 +1,16 @@
+/* *{
+
+} */
+.app{
+    background-image: url(../src/components/images/genshin-impact-0708-01.jpg);
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+ 
+}
 .App {
   text-align: center;
+
 }
 
 .App-logo {
