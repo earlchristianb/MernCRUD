@@ -1,54 +1,39 @@
 import React, {useState,useEffect} from 'react';
-import axios from 'axios';
+import { getChar} from './api';
 
 
+const CharacterDetails = (props) => {
 
-
-
-const CharacterDetails = ( props ) => {
-  
-  const { history, match } = props;
-  const [ specificChar, setspecificChar ] = useState();
+  const { match } = props;
   const { params } = match;
   const { id } = params;
 
+  const [ char, setChar ] = useState(null);
 
 
   useEffect( () => {
-     
-     async function fetchData () {
-      const req = await axios.get( `/${id}` );
-      
-      setspecificChar( req.data );
+  const  fetchChar = async () => {
+    const result = await getChar( id );
+    console.log( result );
+      setChar( result );
     }
-    fetchData();
-      console.log( specificChar );
-  
+    fetchChar();
+    console.log( char );
+      
+  },[])
  
-    
- 
-  }, [] );
-
-
-
-
-
-    
-
-    
   return (
+    char ? (
+      <div key={ char._id } className="charDetails">
+        <h3>{ char.name }
+        </h3>
+      </div>
+    ) : null 
 
-    <div className="charDetails">
-      {specificChar && specificChar.map( ( char ) => (
-        <div key={ char.id } className="details">
-          
-          <h3>{ char.name }</h3>
-          </div>
-     ) ) }
-    </div>
+
   )
-
   
     
 }
 export default CharacterDetails;
+  /* /* <button className="btn btn-primary m-3" onClick={ () => history.push(`/edit/:`) }> editCharacter </button> */

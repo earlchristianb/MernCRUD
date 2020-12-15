@@ -1,17 +1,12 @@
-/* *{
-
-} */
 .app{
     background-image: url(../src/components/images/genshin-impact-0708-01.jpg);
   background-position: center;
-  background-size: cover;
+  background-size: auto;
   width: 100%;
- 
+ height: 100%;
+ background-repeat: no-repeat;
 }
-.App {
-  text-align: center;
 
-}
 
 .App-logo {
   height: 40vmin;

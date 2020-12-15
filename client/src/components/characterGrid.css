@@ -18,6 +18,11 @@
 
   
 }
+.grid_container{
+    padding-top: 20px;
+      padding-left: 50px;
+      padding-right: 50px;
+}
 .btnCreate{
    bottom: 0%;
 
@@ -28,7 +33,7 @@
    margin-right: 10%;
    margin-left: 10% ;
    display: flex;
-   justify-content: space-evenly;    
+   justify-content:center;    
   background-size: cover;
      
 }
@@ -41,5 +46,6 @@
     bottom: 0;
     color: black;
    justify-content: space-evenly;
+  
 }
 

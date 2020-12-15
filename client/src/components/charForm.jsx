@@ -1,38 +1,33 @@
-import React from 'react';
+
 import { useHistory } from 'react-router-dom';
 import React,{useState,useEffect} from 'react';
 import { useForm } from 'react-hook-form';
 
- const charForm = (char) => {
-    
- const [ char, setChar ] = useState();
-  const history = useHistory();
-   
-const { register, handleSubmit } = useForm( {
-    defaultValues: { name: char ? char.name : "" }
-  } );
-  
-    
-    
-   
-const onSubmit = handleSubmit( ( data ) => {
-        alert( JSON.stringify( data ) ),
+   export const CharForm = ({chars, onSubmit}) => {
+     
+     
+     const history = useHistory();
+     
+    const { register, handleSubmit } = useForm( {
+         defaultValues: { name: chars ? chars.name:""}
+           
+     } );
+     
+       
+       
+    const submitHandler = handleSubmit( ( data ) => {
+        onSubmit( data );
         history.push( "/" );
-    }
-        return (
-            <div className="container">
-      
-                <div className="mt-3">
-                    <h3>Create New Character</h3>
-                    <form className="form" onSubmit={ onSubmit } >
+    } )
+    
+     return(
+                    <form className="form" onSubmit={submitHandler} >
                         <div className="form-group">
-             
-              
                             <p>
-                                <br>
-
-                                </br>
-              
+                               
+                                <label htmlFor="id">Id:</label>
+                                <input className="form-control" ref={ register } type="text" name="id" id="id" placeholder="id"></input>
+                                
                                 <label htmlFor="name">Name:</label>
                                 <input className="form-control" ref={ register } type="text" name="name" id="name" placeholder="Character Name"></input>
               
@@ -87,23 +82,16 @@ const onSubmit = handleSubmit( ( data ) => {
                         
                             </p>
                         </div>
-                        <div>
-                            <button type="submit" className="btn  m-4 btn-warning" >Create Character</button>
+                        <div></div>
+                            <button type="submit" className="btn  m-4 btn-warning" >Save Character</button>
 
-                        </div>
+                       
            
                     </form>
-            
-              
-                </div>
-        
-        
-            </div>
-           
-
+    )
 
     
         
-        )
+        
 }
-export default charForm;
+export default CharForm;
