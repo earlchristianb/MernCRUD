@@ -1,13 +1,6 @@
 /** @format */
 
-import {
-	CardContent,
-	Card,
-	Grid,
-	Typography,
-	CardMedia,
-	Button,
-} from "@material-ui/core";
+import { CardContent, Card, Grid, CardMedia } from "@material-ui/core";
 import React, { useState, useEffect } from "react";
 import { getChars } from "./api";
 import "./characterGrid.css";
@@ -38,15 +31,13 @@ export const Character = (props) => {
 								<Grid item xs={12} sm={4} className='card_grid' key={chars.id}>
 									<Card
 										onClick={() => history.push(`/${chars._id}`)}
-										style={{ backgroundImage: `url(${chars.imgUrl})` }}
+										style={{ backgroundImage: `url(${chars.iconLink})` }}
 										className='cards'>
 										<CardMedia
 											style={{ width: "130px", height: "130px" }}></CardMedia>
 										<CardContent className='card_content'></CardContent>
 									</Card>
-									<h3>
-										{chars.name} {chars.id}
-									</h3>
+									<h6>{chars.name}</h6>
 								</Grid>
 							))}
 					</Grid>
@@ -54,12 +45,13 @@ export const Character = (props) => {
 					<CircularProgress />
 				)}
 			</div>
-			<button
-				className='btn_createChar'
-				style={{ fontSize: "Large" }}
-				onClick={() => history.push("/create")}>
-				create character
-			</button>
+			<div className="btn_createChar">
+				<button className="btnsecondary"
+					style={{ fontSize: "Large" }}
+					onClick={() => history.push("/create")}>
+					create character
+				</button>
+			</div>
 		</div>
 	);
 };

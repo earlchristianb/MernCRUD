@@ -11,7 +11,7 @@ const NavBar = () => {
     const history = useHistory();
 	return (
 		<div className='header'>
-			<IconButton>
+			<IconButton onClick={() => history.push("/")}>
 				<HomeTwoToneIcon className='header_icon' fontSize='large' />
 			</IconButton>
 
@@ -23,7 +23,7 @@ const NavBar = () => {
 				/>
 			</IconButton>
 
-            <IconButton className='login' onClick={ () => history.push( '/login' ) }>
+			<IconButton className='login' onClick={() => history.push("/login")}>
 				<AccountCircleIcon className='header_icon' fontSize='large' />
 			</IconButton>
 		</div>

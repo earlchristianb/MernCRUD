@@ -6,7 +6,8 @@ import { Route, Switch } from "react-router-dom";
 import CharacterDetails from './components/characterDetails.jsx';
 import CreateCharacter from './components/createCharacter.jsx';
 import login from './components/login'; 
-import editCharacter from './components/editCharacter.jsx';
+import EditCharacter from './components/editCharacter.jsx';
+import "bootstrap/dist/css/bootstrap.css";
 
 function App () {
   
@@ -15,10 +16,9 @@ function App () {
     <React.Fragment>
       <Navbar/>
       <Switch id="1">
-        
         <Route exact path="/" component={CharacterDisplay}/>
           <Route exact path="/create" component={ CreateCharacter } />
-          <Route exact path="/edit/:id" component={ editCharacter } />
+          <Route exact path="/edit/:id" component={ EditCharacter} />
         <Route exact path="/:id" component={ CharacterDetails } />
         <Route exact path="/login"  component={login}/>
       </Switch>
@@ -27,7 +27,7 @@ function App () {
          
     </React.Fragment>
   
-    </div>
+   </div>
    
       
         

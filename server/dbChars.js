@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 
 const charSchema = mongoose.Schema(
         {
-                id: String,
+            
                 name: String,
                 title: String,
                 imgUrl: String,
@@ -13,7 +13,9 @@ const charSchema = mongoose.Schema(
                 gender: String,
                 rarity: String,
                 constellation: String,
-                wikiLink: String
+                wikiLink: String,
+                iconLink: String,
+                nation: String
         }
  );
 
