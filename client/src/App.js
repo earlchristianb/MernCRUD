@@ -1,12 +1,12 @@
 import './App.css';
-import Navbar from './components/navbar.jsx';
-import CharacterDisplay from './components/characterGrid.jsx';
+import Navbar from './components/navbar/navbar.jsx';
+import CharacterDisplay from './components/characterGrid/characterGrid.jsx';
 import React from 'react';
 import { Route, Switch } from "react-router-dom";
-import CharacterDetails from './components/characterDetails.jsx';
-import CreateCharacter from './components/createCharacter.jsx';
-import login from './components/login'; 
-import EditCharacter from './components/editCharacter.jsx';
+import CharacterDetails from './components/characterDetails/characterDetails.jsx';
+import CreateCharacter from './components/createCharacter/createCharacter.jsx';
+import login from './components/login/login'; 
+import EditCharacter from './components/editCharacter/editCharacter.jsx';
 import "bootstrap/dist/css/bootstrap.css";
 
 function App () {

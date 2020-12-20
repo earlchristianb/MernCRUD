@@ -9,16 +9,16 @@ import {
 	
 } from "@material-ui/core";
 import React, { useState, useEffect } from "react";
-import { getChar } from "./api";
+import { getChar } from "../api/api";
 import "./characterDetails.css";
 import { useHistory } from "react-router-dom";
 
-const CharacterDetails = (props) => {
+export const CharacterDetails = (props) => {
 	const { match } = props;
 	const { params } = match;
 	const { id } = params;
 	const history = useHistory();
-
+	
 	const [char, setChar] = useState(null);
 
 	useEffect(() => {
@@ -31,6 +31,9 @@ const CharacterDetails = (props) => {
 		console.log(char);
 	}, []);
 
+	
+	
+
 	return char ? (
 		<React.Fragment>
 			<div className='charDetails'>
@@ -38,7 +41,7 @@ const CharacterDetails = (props) => {
 					<Card>
 						<CardContent>
 							<label>
-								<h3>Hi! I am {char.name}</h3>
+								<h4>Hi! I am {char.name}</h4>
 							</label>
 
 							<p>
@@ -82,7 +85,11 @@ const CharacterDetails = (props) => {
 				</div>
 			</div>
 			<div className='btn_editChar'>
-				<button className="btn btn-secondary btn-warning" onClick={() => history.push(`/edit/${char._id}`)}>Edit Character</button>
+				<button
+					className='btn btn-secondary btn-warning'
+					onClick={() => history.push(`/edit/${char._id}`)}>
+					Edit Character
+				</button>
 			</div>
 		</React.Fragment>
 	) : (

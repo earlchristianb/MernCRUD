@@ -2,7 +2,7 @@
 
 import { CardContent, Card, Grid, CardMedia } from "@material-ui/core";
 import React, { useState, useEffect } from "react";
-import { getChars } from "./api";
+import { getChars } from "../api/api";
 import "./characterGrid.css";
 import { CircularProgress } from "@material-ui/core";
 
@@ -16,7 +16,7 @@ export const Character = (props) => {
 			setCharacter(chars);
 		}
 		fetchItems();
-		console.log(character);
+		
 	}, []);
 	//useEffectEnds
 	const { history } = props;

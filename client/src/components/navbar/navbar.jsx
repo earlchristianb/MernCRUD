@@ -15,7 +15,7 @@ const NavBar = () => {
 				<HomeTwoToneIcon className='header_icon' fontSize='large' />
 			</IconButton>
 
-			<IconButton>
+			<IconButton className="header_logocontainer" onClick={() => history.push("/")}>
 				<img
 					className='header_logo'
 					src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Genshin_Impact_logo.svg/220px-Genshin_Impact_logo.svg.png'

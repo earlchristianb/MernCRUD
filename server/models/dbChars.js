@@ -15,7 +15,7 @@ const charSchema = mongoose.Schema(
                 constellation: String,
                 wikiLink: String,
                 iconLink: String,
-                nation: String
+                nation: String,
         }
  );
 

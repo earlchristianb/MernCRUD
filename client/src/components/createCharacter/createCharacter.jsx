@@ -3,14 +3,14 @@
 import React from "react";
 import "./createCharacter.css";
 
-import { createChars } from "./api";
+import { createChars } from "../api/api";
 import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
 export const CreateCharacter = () => {
 	const history = useHistory();
 	const { register, handleSubmit } = useForm({
-		defaultValues: {},
+	
 	});
 	const onSubmit = handleSubmit(async (data) => {
 		await createChars(data);

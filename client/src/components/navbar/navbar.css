@@ -3,7 +3,7 @@
     justify-content: space-around;
      z-index: 100;
      align-items: center;
-        border: 2px solid gainsboro;
+        
         background-color:rgb(12, 133, 209);
 
 }
@@ -12,3 +12,7 @@
     object-fit: contain;
     height: 40px;
 }
+.header_logo{
+    border-radius: 10px solid red;
+}
+
